@@ -1,7 +1,8 @@
 var pgp = require("pg-promise")(/*options*/);
+var db = pgp(process.env.DATABASE_URL || "postgres://postgres:123456@localhost:5432/surveyjs");
 
 function PostgresDBAdapter() {
-  var db = pgp(process.env.DATABASE_URL || "postgres://postgres:123456@localhost:5432/surveyjs");
+
 
   function getObjectFromStorage(tableName, callback) {
     db.any("SELECT * FROM " + tableName).then(function(result) {
