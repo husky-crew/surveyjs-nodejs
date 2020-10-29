@@ -1,24 +1,13 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var session = require("express-session");
 var dbadapter = require("./dbadapter");
-// var inmemorydbadapter = require("./inmemorydbadapter");
 
 var app = express();
-app.use(
-  session({
-    secret: "mysecret",
-    resave: true,
-    saveUninitialized: true,
-    //cookie: { secure: true }
-  })
-);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-function getDBAdapter(req) {
+function getDBAdapter() {
   var db = new dbadapter();
-  // var db = new inmemorydbadapter(req.session);
   return db;
 }
 
