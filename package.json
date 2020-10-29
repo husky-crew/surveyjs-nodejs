@@ -1,6 +1,6 @@
 {
   "name": "surveyjs-nodejs",
-  "version": "0.1.0",
+  "version": "0.1.1-husky.1.0",
   "description": "Sample NodeJS backend for SurveyJS: Survey Library and Survey Creator",
   "main": "index.js",
   "scripts": {
