@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
 var dbadapter = require("./dbadapter");
-var inmemorydbadapter = require("./inmemorydbadapter");
+// var inmemorydbadapter = require("./inmemorydbadapter");
 
 var app = express();
 app.use(
@@ -17,8 +17,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 function getDBAdapter(req) {
-  //var db = new dbadapter();
-  var db = new inmemorydbadapter(req.session);
+  var db = new dbadapter();
+  // var db = new inmemorydbadapter(req.session);
   return db;
 }
 
