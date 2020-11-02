@@ -41,14 +41,14 @@
                 <!-- ko foreach: availableSurveys -->
                 <tr>
                   <td data-bind="text: name"></td>
-                  <td>
-                    <a
+                  <td style="text-align: right">
+                    <!--<a
                       class="sv_button_link"
                       data-bind="attr: { href: 'survey.html?id=' + ko.unwrap(id) }"
                       >Запустить</a
-                    >
+                    >-->
                     <a
-                      class="sv_button_link"
+                      class="sv_button_link sv_button_link_edit"
                       data-bind="attr: { href: 'survey-creator.html?id=' + ko.unwrap(id)+'&name='+ko.unwrap(name) }"
                       >Редактировать</a
                     >

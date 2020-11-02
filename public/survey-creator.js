@@ -63,6 +63,7 @@ var options = {
   // showDefaultLanguageInTestSurveyTab: 'auto'
 };
 var surveyCreator = new SurveyCreator.SurveyCreator("survey-creator-container", options);
+surveyCreator.showPropertyGrid = false;
 var surveyId = decodeURI(getParams()["id"]);
 surveyName = decodeURI(getParams()["name"]);
 surveyCreator.loadSurvey(surveyId);

@@ -57,6 +57,11 @@ section {
   text-align: center;
 }
 
+.sv_button_link.sv_button_link_edit
+{
+  width: 150px;
+}
+
 .sv_button_link:hover,
 .sv_button_link:visited:hover {
   background-color: #1ab394;
@@ -108,12 +113,12 @@ section {
   border: none;
   display: inline-block;
   cursor: pointer;
-  outline: none; 
+  outline: none;
 }
 
 .sa-table .rounded-button {
   background-color: #1ab394;
-  margin-right: 50px; 
+  margin-right: 50px;
 }
 
 .results-page {
@@ -160,4 +165,10 @@ section {
 
 .results-page__tab--active a {
   background-color: #f7f7f7;
+}
+
+.svd-designer-container--left-side {
+  width: 30%;
+  max-width: 30%;
+  flex-basis: 30%;
 }
