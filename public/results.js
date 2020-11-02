@@ -59,7 +59,7 @@ function SurveyManager(baseUrl, accessKey) {
             "button",
             "rounded-button",
             {
-              innerHTML: "Show in Survey",
+              innerHTML: "Показать отпрос",
               onclick: (e) => {
                 windowSurvey.survey.data =
                   table.data[opt.row.getDataPosition()];

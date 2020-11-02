@@ -46,9 +46,23 @@ function getParams() {
   return result;
 }
 
+SurveyCreator.localization.currentLocale = 'ru';
 Survey.dxSurveyService.serviceUrl = "";
 var accessKey = "";
-var surveyCreator = new SurveyCreator.SurveyCreator("survey-creator-container");
+var options = {
+  questionTypes: ['radiogroup'],
+  // showElementEditorAsPropertyGrid: false,
+  // showLogicTab: false,
+  // showTranslationTab: false,
+  // showEmbededSurveyTab: false,
+  showTestSurveyTab: false,
+  showJSONEditorTab: false,
+  generateValidJSON: true,
+  showPagesToolbox: false,
+  // useTabsInElementEditor: false,
+  // showDefaultLanguageInTestSurveyTab: 'auto'
+};
+var surveyCreator = new SurveyCreator.SurveyCreator("survey-creator-container", options);
 var surveyId = decodeURI(getParams()["id"]);
 surveyName = decodeURI(getParams()["name"]);
 surveyCreator.loadSurvey(surveyId);

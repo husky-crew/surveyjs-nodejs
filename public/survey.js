@@ -18,7 +18,10 @@ function init() {
   };
 
   var surveyId = decodeURI(getParams()["id"]);
-  var model = new Survey.Model({ surveyId: surveyId, surveyPostId: surveyId });
+  var model = new Survey.Model({
+    surveyId: surveyId,
+    surveyPostId: surveyId
+  });
   model.css = css;
   window.survey = model;
   model.render("surveyElement");
