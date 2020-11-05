@@ -172,3 +172,29 @@ section {
   max-width: 30%;
   flex-basis: 30%;
 }
+
+table#resultTable
+{
+  width: 100%;
+  margin: 2em auto;
+}
+
+table#resultTable,
+table#resultTable th,
+table#resultTable td
+{
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+
+table#resultTable td,
+table#resultTable th
+{
+  padding: .5em;
+  text-align: left;
+}
+
+table#resultTable tr:nth-child(even) td
+{
+  background-color: #f4f4f4;
+}

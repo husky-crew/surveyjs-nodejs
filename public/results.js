@@ -76,6 +76,26 @@ function SurveyManager(baseUrl, accessKey) {
         { haveCommercialLicense: true }
       ));
       table.render(document.getElementById("tableContainer"));
+
+      var tBody = document.querySelector('#resultTable tbody');
+
+      var findResultText = (resultValue) => {
+        const { text } = survey.pages[0].elements[0].choices.find(({ itemValue }) => itemValue === resultValue);
+        return text;
+      };
+
+      self.results().forEach(function({ resultValue, clientId }) {
+        var tr = document.createElement('tr');
+        var trResult = document.createElement('td');
+        var trClinet = document.createElement('td');
+
+        trResult.innerText = findResultText(resultValue);
+        trClinet.innerText = clientId;
+
+        tr.appendChild(trResult);
+        tr.appendChild(trClinet);
+        tBody.appendChild(tr);
+      });
     };
     xhr.send();
   };

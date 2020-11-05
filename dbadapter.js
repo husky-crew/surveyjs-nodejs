@@ -39,7 +39,11 @@ function PostgresDBAdapter() {
       .then(function(data) {
         //console.log(JSON.stringify(data));
         var results = (data || []).map(function(item) {
-          return item["json"];
+          const result = JSON.parse(item.json);
+          const resultValue = Object.values(result)[0];
+          result.clientId = item.clientid;
+          result.resultValue = resultValue;
+          return JSON.stringify(result);
         });
         callback(results);
       });
