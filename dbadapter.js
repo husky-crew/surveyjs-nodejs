@@ -16,7 +16,7 @@ function PostgresDBAdapter() {
 
   function addSurvey(name, callback) {
     db
-      .one("INSERT INTO surveys (name, json) VALUES($1, $2) RETURNING *", [
+      .one("INSERT INTO surveys (name, json) VALUES ($1, $2) RETURNING *", [
         name,
         "{}"
       ])
@@ -25,7 +25,7 @@ function PostgresDBAdapter() {
 
   function postResults(postId, clientId, json, callback) {
     db
-      .one("INSERT INTO results (postid, clientid, json) VALUES($1, $2) RETURNING *", [
+      .one("INSERT INTO results (postid, clientid, json) VALUES ($1, $2, $3) RETURNING *", [
         postId,
         clientId,
         json
