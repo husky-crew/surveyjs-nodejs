@@ -23,10 +23,11 @@ function PostgresDBAdapter() {
       .then(callback);
   }
 
-  function postResults(postId, json, callback) {
+  function postResults(postId, clientId, json, callback) {
     db
-      .one("INSERT INTO results (postid, json) VALUES($1, $2) RETURNING *", [
+      .one("INSERT INTO results (postid, clientid, json) VALUES($1, $2) RETURNING *", [
         postId,
+        clientId,
         json
       ])
       .then(callback);

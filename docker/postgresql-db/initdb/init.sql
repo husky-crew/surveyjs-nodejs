@@ -18,6 +18,7 @@ CREATE TABLE public.results
 (
     id uuid NOT NULL DEFAULT uuid_generate_v1(),
     postid text COLLATE pg_catalog."default",
+    clientid varchar(255) COLLATE pg_catalog."default",
     json text COLLATE pg_catalog."default"
 )
 WITH (

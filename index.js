@@ -60,8 +60,9 @@ app.post("/changeJson", function(req, res) {
 app.post("/post", function(req, res) {
   var db = getDBAdapter(req);
   var postId = req.body.postId;
+  var clientId = req.body.clientId;
   var surveyResult = req.body.surveyResult;
-  db.postResults(postId, surveyResult, function(result) {
+  db.postResults(postId, clientId, surveyResult, function(result) {
     sendJsonResult(res, result.json);
   });
 });
